@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-  ><head>
+  <head>
     <title>Tic Tac Toe</title>
     <meta lang="eng" charset="UTF-8">
     <link href="stylesheet.css", rel="stylesheet">
   </head>
   <body>
     <nav>
-      <button id="reset" onClick="resetState()" style="height:40px; width: 100px" >Restart</button>
-      <!-- <button id="start" onClick="initialState()" style="height:40px; width: 100px">Start Game</button> -->
+      <button id="reset"  style="height:40px; width: 100px" > Play again </button>
+      <button id="start"  style="height:40px; width: 100px"> Start Game </button>
     </nav>
     <header role="banner">
       <h1>Tic Tac Toe</h1>
     </header>
-    <h3 id="turn" align="center">Player X turn</h3>
+    <h3 id="turn" style="margin-left:45%" ></h3>
     <div id="table">
-      <div class="firstInRow" style="margin-top:10%" id="0"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(0)"></button></div>
+      <div class="firstInRow" style="margin-top:7%" id="0"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(0)"></button></div>
       <div class="row1" id="1"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(1)"></button></div>
       <div class="row1" id="2"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(2)"></button></div>
       <div  class="firstInRow" id="3"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(3)"></button></div>
