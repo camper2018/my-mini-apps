@@ -1,2 +1,33 @@
+<!DOCTYPE html>
+<html>
+  ><head>
+    <title>Tic Tac Toe</title>
+    <meta lang="eng" charset="UTF-8">
+    <link href="stylesheet.css", rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <button id="reset" onClick="resetState()" style="height:40px; width: 100px" >Restart</button>
+      <!-- <button id="start" onClick="initialState()" style="height:40px; width: 100px">Start Game</button> -->
+    </nav>
+    <header role="banner">
+      <h1>Tic Tac Toe</h1>
+    </header>
+    <h3 id="turn" align="center">Player X turn</h3>
+    <div id="table">
+      <div class="firstInRow" style="margin-top:10%" id="0"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(0)"></button></div>
+      <div class="row1" id="1"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(1)"></button></div>
+      <div class="row1" id="2"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(2)"></button></div>
+      <div  class="firstInRow" id="3"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(3)"></button></div>
+      <div class="row2" id="4"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(4)"></button></div>
+      <div class="row2" id="5"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(5)"></button></div>
+      <div class="firstInRow" id="6"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(6)"></button></div>
+      <div class="row3" id="7"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(7)"></button></div>
+      <div class="row3" id="8"><button class="placeholder" style="height: 100px; width : 100px"onClick="clickHandler(8)"></button></div>
+    </div>
+    <div id="winDiv"></div>
 
+    <script src="app.js"></script>
+  </body>
+</html>
 

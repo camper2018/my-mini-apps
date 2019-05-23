@@ -1,0 +1,35 @@
+h1 {
+  margin-left: 43%;
+  color:blue;
+}
+.firstInRow {
+  height: 100px ;
+  width: 100px;
+  margin-left: 38%;
+  border: 3px solid black;
+  float: left;
+}
+.row1 {
+  height: 100px ;
+  width: 100px;
+  float: left;
+  margin-top: 10%;
+  border: 3px solid black;
+
+}
+.row2 {
+  height: 100px ;
+  width: 100px;
+  float: left;
+  border: 3px solid black;
+
+}
+.row3 {
+  height: 100px ;
+  width: 100px;
+  float: left;
+  border: 3px solid black;
+}
+
+
+
