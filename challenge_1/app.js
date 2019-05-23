@@ -94,15 +94,9 @@ let clickHandler = function(id) {
   var hasWon = checkWinner(player);
 
   if (hasWon) {
-    var winDiv = document.createElement("span");
-    winDiv.innerHTML = "Player " + player + " won";
-    var $div = document.getElementById('winDiv');
-    $div.appendChild(winDiv);
+    document.getElementById('turn').innerHTML = 'Player ' + player + ' won';
   } else if (countOfturns === 9) {
-    var winDiv = document.createElement("span");
-    winDiv.innerHTML = "Tie Game !";
-    var $div = document.getElementById('winDiv');
-    $div.appendChild(winDiv);
+    document.getElementById('turn').innerHTML = 'Tie Game !';
   } else {
     swapTurns();
     document.getElementById('turn').innerHTML = 'Player ' + player + ' turn';
