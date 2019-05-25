@@ -12,9 +12,12 @@ $(document).ready(function() {
       data: formData,
       processData: false,
       success: function(data) {
-        var finalData = data.replace(/\n/g, '<br>');
-        $('#data').html(finalData) ;
-        //console.log('form successfully submitted', data);
+        var result = data.split('\n');
+        result.forEach(function(item) {
+         $div = $('<div></div>');
+         $div.text(item);
+         $('#data').append($div);
+        });
       },
       error: function (error) {
           console.error('Failed to send form', error);
@@ -23,6 +26,4 @@ $(document).ready(function() {
   });
 
 });
-
-
 
