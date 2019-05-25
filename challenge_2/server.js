@@ -25,8 +25,8 @@ app.post('/upload_json', (req, res) => {
     res.status(400).send('No files were uploaded');
   }
   let myfile = req.files.myFile.data.toString('utf8');
-  var result = csvReportGernerator(JSON.parse(myfile));
-   res.render('index', { data: result});
-   res.end();
+   var result = csvReportGernerator(JSON.parse(myfile));
+   //res.render('index', { data: result});
+   res.end(result);
 });
 

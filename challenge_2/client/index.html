@@ -4,6 +4,7 @@
     <title>CSV Report Generator</title>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
   </head>
   <body>
     <header>
@@ -12,8 +13,11 @@
 
     <form method="POST" action="/upload_json"enctype="multipart/form-data">
       Select a file: <input type="file" name="myFile" id="myFile"><br><br>
-      <input type="submit" value="Submit"/>
+      <input id="submit" type="submit" value="Submit"/>
     </form>
+    <p id = "data"></p>
+    <script src="app.js"></script>
+
   </body>
 </html>
 
