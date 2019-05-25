@@ -10,14 +10,11 @@
       <h1>CSV Report Generator</h1>
     </header>
 
-    <form method="POST" action="/upload_json">
-      <textarea rows = "10" cols="60" name="json"></textarea><br>
+    <form method="POST" action="/upload_json"enctype="multipart/form-data">
+      Select a file: <input type="file" name="myFile" id="myFile"><br><br>
       <input type="submit" value="Submit"/>
-      <!-- <form enctype='application/json'>
-        <input type='file' name='sales_report.json' multiple>
-      </form> -->
-
     </form>
+
     <p class="csv"><%- data.replace(/\n/g, '<br>')%></p>
 
   </body>
