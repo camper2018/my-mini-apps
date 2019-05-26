@@ -12,18 +12,19 @@ $(document).ready(function() {
       data: formData,
       processData: false,
       success: function(data) {
-        var result = data.split('\n');
-        result.forEach(function(item) {
-         $div = $('<div></div>');
-         $div.text(item);
-         $('#data').append($div);
-        });
+        // var result = data.split('\n');
+        // result.forEach(function(item) {
+        //  $div = $('<div></div>');
+        //  $div.text(item);
+        //  $('#data').append($div);
+        // });
+        $('#download').append(data);
+
       },
       error: function (error) {
           console.error('Failed to send form', error);
-        }
+      }
     });
   });
-
 });
 
