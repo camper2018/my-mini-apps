@@ -1,8 +1,8 @@
-import React,{Component} from "react";
-import ReactDOM from "react-dom";
-export class CheckoutForm extends Component {
+//import React,{Component} from "react";
+//import ReactDOM from "react-dom";
+class CheckoutForm extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       step: 1,
       name:"",
@@ -19,7 +19,7 @@ export class CheckoutForm extends Component {
       billingZip : ""
     };
   this.goToNext = this.goToNext.bind(this);
-  this.goToPrev = this.goToBack.bind(this);
+  this.goToPrev = this.goToPrev.bind(this);
   }
   goToNext() {
     const {step} = this.state;
