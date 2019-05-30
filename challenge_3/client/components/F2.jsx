@@ -22,9 +22,9 @@ class  ShippingInfo extends React.Component {
             Phone #:  <input size="30" name="phoneNumber" type="tel" placeholder="Enter Your Phone Number" onChange={(e) => handleChange(e)} defaultValue={values.phoneNumber}></input>
             {/* <input type="submit" value="Next" onSubmit={(e)=> this.continue}></input> */}
           </form><br/><br/>
-          <button onClick={goToNext}>Next</button>
+          <button onClick={goToPrev}>Back</button>
           <span>
-            <button onClick={goToPrev}>Back</button>
+            <button onClick={goToNext}>Next</button>
           </span>
       </div>
 

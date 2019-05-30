@@ -1,7 +1,6 @@
+//import axios from 'axios';
 class  ConfirmInfo extends React.Component {
   handleConfirm() {
-    // const {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip} = this.state;
-    // const values = {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip}
     const{values} = this.props;
     var data = {
       name: values.name,
@@ -17,7 +16,18 @@ class  ConfirmInfo extends React.Component {
       CVV: values.CVV,
       billingZip: values.billingZip
     }
-
+    console.log(data);
+    axios({
+      method: 'post',
+      url: '/addUserInfo',
+      data: data
+      })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
   }
   render() {
     const {values,goToPrev} = this.props;
@@ -38,9 +48,9 @@ class  ConfirmInfo extends React.Component {
           <li>Card Expiry Date : {values.expiryDate}</li>
           <li>Billing Card Zip : {values.billingZip}</li>
         </ul><br></br>
-        <button type="button" onClick={this.handleConfirm.bind(this)}>Confirm</button>
+        <button onClick={goToPrev}>Back</button>
         <span>
-            <button onClick={goToPrev}>Back</button>
+          <button type="button" onClick={this.handleConfirm.bind(this)}>Purchase</button>
         </span>
       </div>
     )

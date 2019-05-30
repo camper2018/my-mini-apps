@@ -14,12 +14,11 @@ class PersonalInfo extends React.Component {
           Password: <input size="30" name="password" type="password" placeholder="Enter Your Password" onChange={(e) => handleChange(e)} defaultValue={values.password}></input>
           {/* <input type="submit" value="Next" onSubmit={(e)=> this.continue}></input> */}
         </form><br/><br/>
-        <button onClick={goToNext}>Next</button>
+        <button onClick={goToPrev}>Back</button>
         <span>
-          <button onClick={goToPrev}>Back</button>
+          <button onClick={goToNext}>Next</button>
         </span>
-
-      </div>
+        </div>
 
     )
   }
