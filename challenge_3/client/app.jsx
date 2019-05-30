@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       step: 1,
+      insertId: null,
       name:"",
       email: "",
       password: "",
@@ -15,7 +16,7 @@ class App extends React.Component {
       shipping_line2:"",
       shipping_city: "",
       shipping_state:"",
-      shipping_zip: "",
+      shipping_zip: 0,
       phoneNumber:"",
       creditCard: "",
       expiryDate: "",
@@ -25,10 +26,14 @@ class App extends React.Component {
   this.goToNext = this.goToNext.bind(this);
   this.goToPrev = this.goToPrev.bind(this);
   this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+  this.handlePurchase = this.handlePurchase.bind(this);
+  this.baseState = this.state;
   }
   goToNext() {
     const {step} = this.state;
-    this.setState({step: step + 1});
+    this.setState({step: step + 1},()=> {
+    });
   }
   goToPrev() {
     const {step} = this.state;
@@ -40,9 +45,34 @@ class App extends React.Component {
       [name]: value
     });
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    this.goToNext();
+    const data = this.state;
+    axios({
+      method: 'post',
+      url: '/addUserInfo',
+      data: data
+      })
+    .then((response)=> {
+      this.setState({
+        insertId: response.data.insertId
+      });
+    })
+    .catch((error)=> {
+      throw error;
+    });
+
+  }
+
+  handlePurchase() {
+    this.setState(
+      this.baseState, ()=>{}
+    );
+  }
 
   render() {
-    const { step } = this.state;
+    const { step , insert_id} = this.state;
     const {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip} = this.state;
     const values = {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip}
       if (step === 1) {
@@ -57,6 +87,7 @@ class App extends React.Component {
           <PersonalInfo
           goToNext = {this.goToNext}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
           goToNext={this.goToNext}
           goToPrev={this.goToPrev}
           values={values}
@@ -67,6 +98,7 @@ class App extends React.Component {
           <ShippingInfo
           goToNext = {this.goToNext}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
           goToPrev={this.goToPrev}
           goToNext={this.goToNext}
           values={values}
@@ -77,6 +109,7 @@ class App extends React.Component {
           <BillingInfo
           goToNext = {this.goToNext}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
           goToPrev={this.goToPrev}
           goToNext={this.goToNext}
           values={values}
@@ -86,6 +119,7 @@ class App extends React.Component {
         return (
           <ConfirmInfo
             goToPrev={this.goToPrev}
+            handlePurchase={this.handlePurchase}
             values={values}
           />
         )
