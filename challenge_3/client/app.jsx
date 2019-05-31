@@ -56,7 +56,7 @@ class App extends React.Component {
       })
     .then((response)=> {
       this.setState({
-        insertId: response.data.insertId
+        insertId: response.data
       });
     })
     .catch((error)=> {
@@ -72,7 +72,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { step , insert_id} = this.state;
+    const { step , insertId} = this.state;
     const {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip} = this.state;
     const values = {name, email, password, shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, expiryDate, CVV, billingZip}
       if (step === 1) {
@@ -90,6 +90,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
           goToNext={this.goToNext}
           goToPrev={this.goToPrev}
+          insertId={insertId}
           values={values}
           />
         )
@@ -101,6 +102,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
           goToPrev={this.goToPrev}
           goToNext={this.goToNext}
+          insertId={insertId}
           values={values}
           />
         )
@@ -112,6 +114,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
           goToPrev={this.goToPrev}
           goToNext={this.goToNext}
+          insertId={insertId}
           values={values}
           />
         )
@@ -120,6 +123,7 @@ class App extends React.Component {
           <ConfirmInfo
             goToPrev={this.goToPrev}
             handlePurchase={this.handlePurchase}
+            insertId={insertId}
             values={values}
           />
         )

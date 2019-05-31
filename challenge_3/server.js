@@ -30,17 +30,15 @@ app.post('/addUserInfo', (req, res) => {
     if (error) {
       throw error
     }
-    res.json(results);
+    res.json(results.insertId);
     res.end();
   });
   } else {
-    console.log('35', req.body);
-    console.log('36', req.query);
-    db.connection.query(`UPDATE UserInfo SET ? where id=${req.body.insertId}`, {shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, billingZip, CVV, expiryDate}, function (error, results, fields) {
+    db.connection.query(`UPDATE UserInfo SET ? where ID=${req.body.insertId} `, {shipping_line1, shipping_line2, shipping_city, shipping_state, shipping_zip, phoneNumber, creditCard, billingZip, CVV, expiryDate}, function (error, results, fields) {
       if (error)  {
         throw error;
       }
-      console.log('changed ' + results.changedRows + ' rows');
+      res.json(req.body.insertId);
       res.end();
     });
   }

@@ -4,7 +4,7 @@
 class PersonalInfo extends React.Component {
 
   render() {
-    const {values, handleChange,goToNext, goToPrev, handleSubmit} = this.props;
+    const {values, handleChange,goToNext, goToPrev, handleSubmit,insertId} = this.props;
     return (
       <div>
         <h1>Enter Your Personal Information</h1>
