@@ -27,7 +27,7 @@ app.post('/upload_json', (req, res) => {
   }
   let myfile = req.files.myFile.data.toString('utf8');
    var result = csvReportGernerator(JSON.parse(myfile));
-   fs.appendFile(__dirname +'/test-file.csv', result ,function(err) {
+   fs.writeFile(__dirname +'/test-file.csv', result ,function(err) {
       if (err) {
         throw err;
       }
